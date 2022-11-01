@@ -4,13 +4,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def head():
-    first = 'This is my first conditions'
-    return render_template('index.html', message = False)
+    first = 'This is my first conditions experience'
+    return render_template('index.html', message=first)
 
-@app.route('/ikbal')
-def elnur():
-    name = ['Serdar', 'Vinchenzo', 'Orlando','Noble','Callahan']
-    return render_template('body.html', object = name, developer_name ='Serdar')
+@app.route('/list')
+def header():
+    names = ['Fatih', 'Vinchenzo', 'Orlando','Noble','Callahan']
+    return render_template('body.html', object=names)
 
 
 if __name__=='__main__':
