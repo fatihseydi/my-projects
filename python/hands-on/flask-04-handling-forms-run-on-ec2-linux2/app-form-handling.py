@@ -7,16 +7,16 @@ app = Flask(__name__)
 # Create a function named `home` which uses template file named `index.html` given under `templates` folder, send your name as template variable, and assign it root path ('/')
 @app.route('/')
 def home():
-    return render_template('index.html', name = 'Serdar')
+    return render_template('index.html', name = 'Fatih')
 
 # Write a function named `greet` which uses template file named `greet.html` given under `templates` folder. it takes parameters from query string on URL. assing that parameter to the 'user' variable. If it doesn't have any parameter, warning massage is raised
 @app.route('/greet', methods=["GET"])
 def greet():
     if 'user' in request.args:
-        usr = request.args['user']
-        return render_template('greet.html', user = usr.title())
+        myself = request.args['user']
+        return render_template('greet.html', user = myself)
     else:
-        return render_template('greet.html', user = 'Send your user name with "user param in query string')
+        return render_template('greet.html', user = 'Send your user name with "user" param in query string')
     
 
 
@@ -39,5 +39,5 @@ def login():
 
 # app.run(host='0.0.0.0', port=80)
 if __name__ == '__main__':
-    # app.run(debug=True)
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug=True)
+    #app.run(host='0.0.0.0', port=80)
